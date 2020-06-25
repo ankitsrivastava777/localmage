@@ -1,0 +1,85 @@
+Hello index/index.phtml
+
+<?php
+echo "<pre>";
+
+
+echo $block->getDatafun();
+
+
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+// $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
+
+// $quote = $cart->getQuote();
+// $paymentMethod = $quote->getPayment()->getMethod();
+// echo $paymentMethod;
+
+
+
+
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+// $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
+
+// $quote = $cart->getQuote();
+// $shippingMethod = $quote->getShippingAddress()->getShippingMethod();
+
+// print_r($shippingMethod);
+
+// $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();        
+ 
+// $paymentHelper = $objectManager->get('Magento\Payment\Helper\Data');
+// $allPaymentMethods = $paymentHelper->getPaymentMethods();
+// $allPaymentMethodsArray = $paymentHelper->getPaymentMethodList();
+ 
+// var_dump($allPaymentMethodsArray);
+// var_dump($allPaymentMethods);
+ 
+// $paymentConfig = $objectManager->get('Magento\Payment\Model\Config');
+// $activePaymentMethods = $paymentConfig->getActiveMethods();
+ 
+// var_dump(array_keys($activePaymentMethods));
+ 
+// $orderPaymentCollection = $objectManager->get('\Magento\Sales\Model\ResourceModel\Order\Payment\Collection');
+// $orderPaymentCollection->getSelect()->group('method');
+// $paymentMethods[] = array('value' => '', 'label' => 'Any');
+// foreach ($orderPaymentCollection as $col) { 
+//     $paymentMethods[] = array('value' => $col->getMethod(), 'label' => $col->getAdditionalInformation()['method_title']);            
+// } 
+
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+// $activeShipping = $objectManager->create('Magento\Shipping\Model\Config')->getActiveCarriers();
+
+// foreach($activeShipping as $abc)
+// {
+//     print_r($abc->getData());
+// }
+
+
+
+
+
+// $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();        
+ 
+// $paymentHelper = $objectManager->get('Magento\Payment\Helper\Data');
+// $allPaymentMethods = $paymentHelper->getPaymentMethods();
+// $allPaymentMethodsArray = $paymentHelper->getPaymentMethodList();
+ 
+// // var_dump($allPaymentMethodsArray);
+// // var_dump($allPaymentMethods);
+ 
+// $paymentConfig = $objectManager->get('Magento\Payment\Model\Config');
+// $activePaymentMethods = $paymentConfig->getActiveMethods();
+ 
+// // var_dump(array_keys($activePaymentMethods));
+ 
+// $orderPaymentCollection = $objectManager->get('\Magento\Sales\Model\ResourceModel\Order\Payment\Collection');
+// $orderPaymentCollection->getSelect()->group('method');
+// $paymentMethods[] = array('value' => '', 'label' => 'Any');
+// foreach ($orderPaymentCollection as $col) { 
+//     $paymentMethods[] = array('value' => $col->getMethod(), 'label' => $col->getAdditionalInformation()['method_title']);            
+// }        
+ 
+// var_dump($paymentMethods);
+?>
+
