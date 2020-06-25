@@ -11,8 +11,6 @@
 
 namespace Sugarcode\Test\Block\Sales\Order;
 
-
-
 class Fee extends \Magento\Framework\View\Element\Template
 {
     /**

@@ -13,17 +13,14 @@
                     <item name="components" xsi:type="array">
                         <item name="block-totals" xsi:type="array">
                             <item name="children" xsi:type="array">
-
-
                                 <item name="fee" xsi:type="array">
-                                    <item name="component"  xsi:type="string">Sugarcode_Test/js/view/checkout/cart/totals/fee</item>
+                                    <item name="component" xsi:type="string">Sugarcode_Test/js/view/checkout/cart/totals/fee</item>
                                     <item name="sortOrder" xsi:type="string">20</item>
                                     <item name="config" xsi:type="array">
-                                         <item name="template" xsi:type="string">Sugarcode_Test/checkout/cart/totals/fee</item>
+                                        <item name="template" xsi:type="string">Sugarcode_Test/checkout/cart/totals/fee</item>
                                         <item name="title" xsi:type="string" translate="true">Fee</item>
                                     </item>
                                 </item>
-
                             </item>
                         </item>
                     </item>
