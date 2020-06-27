@@ -65,13 +65,7 @@ class GridMethod extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
             return false;
         }
         $country = $request->getDestCountryId();
-
-        $items = $this->_cart->getQuote()->getAllItems();
-        $weight = 0;
-        foreach($items as $item) {
-            $weight += ($item->getWeight() * $item->getQty()) ;        
-        }
-        
+        $weight = $request->getPackageWeight();
         $count = $this->getConfigData('activenew');
         $unserializedata = $this->serialize->unserialize($count);
         $gridData = array();
