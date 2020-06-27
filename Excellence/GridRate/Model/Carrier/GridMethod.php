@@ -42,6 +42,7 @@ class GridMethod extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         \Psr\Log\LoggerInterface $logger,
         \Magento\Shipping\Model\Rate\ResultFactory $rateResultFactory,
         \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory,
+        \Magento\Checkout\Model\Cart $cartModel,
         \Magento\Framework\Serialize\Serializer\Json $serialize,
 
         array $data = []
@@ -50,6 +51,7 @@ class GridMethod extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         $this->_rateMethodFactory = $rateMethodFactory;
         $this->_logger = $logger;
         $this->serialize = $serialize;
+        $this->_cart = $cartModel;
         parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
     }
 
@@ -64,16 +66,13 @@ class GridMethod extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         }
         $country = $request->getDestCountryId();
 
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
-        $items = $cart->getQuote()->getAllItems();
+        $items = $this->_cart->getQuote()->getAllItems();
         $weight = 0;
-        
-        foreach ($items as $item) {
-            $weight += ($item->getWeight() * $item->getQty());
+        foreach($items as $item) {
+            $weight += ($item->getWeight() * $item->getQty()) ;        
         }
+        
         $count = $this->getConfigData('activenew');
-
         $unserializedata = $this->serialize->unserialize($count);
         $gridData = array();
         foreach ($unserializedata as $row) {
