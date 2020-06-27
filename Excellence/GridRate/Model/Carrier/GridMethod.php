@@ -13,8 +13,6 @@ class GridMethod extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
     protected $_code = 'gridmethod';
     protected $serialize;
     protected $helperData;
-
-
     protected $_logger;
     /**
      * @var bool
@@ -25,8 +23,6 @@ class GridMethod extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
      * @var \Magento\Shipping\Model\Rate\ResultFactory
      */
     protected $_rateResultFactory;
-
-
     /**
      * @var \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory
      */
@@ -71,12 +67,12 @@ class GridMethod extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
         $items = $cart->getQuote()->getAllItems();
-
         $weight = 0;
+        
         foreach ($items as $item) {
             $weight += ($item->getWeight() * $item->getQty());
         }
-        $count =  $this->getConfigData('activenew');
+        $count = $this->getConfigData('activenew');
 
         $unserializedata = $this->serialize->unserialize($count);
         $gridData = array();
