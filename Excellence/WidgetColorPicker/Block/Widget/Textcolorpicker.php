@@ -10,5 +10,18 @@ class Textcolorpicker extends Template implements BlockInterface
 {
 
     protected $_template = "widget/textcolorpicker.phtml";
+
+
+    public function getDescription()
+    {
+        $desc = $this->getData('test_desc');
+        //it will return your description which is added in your widget
+    }
+ 
+    public function getSelectValue()
+    {
+        return $this->getData('test_select');
+        //will return select option value
+    }
 }
 

@@ -87,7 +87,7 @@ class GridMethod extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
                     $method->setMethodTitle($this->getConfigData('name'));
                     $method->setPrice($shippingPrice);
                     $method->setCost($shippingPrice);
-                    $result->append($method);
+                    $result->append($method); 
 
                     return $result;
                 }
