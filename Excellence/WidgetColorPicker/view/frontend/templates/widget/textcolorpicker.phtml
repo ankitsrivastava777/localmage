@@ -1,16 +1,16 @@
 <?php
 
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
-if ($product->getTypeId() == 'configurable') {
-    $basePrice = $product->getPriceInfo()->getPrice('regular_price');
+$productType = $block->getProductType();
+$productPriceConfig = $block->getProductConfPrice();
+$productPrice = $block->getProductPrice();
 
-    $regularPrice = $basePrice->getMinRegularAmount()->getValue();
-    $price = $product->getFinalPrice() / 4;
+if ($productType == 'configurable') {
+    $price = $productPriceConfig / 4;
 } else {
-    $price = $product->getPrice() / 4;
+    $price = $productPrice / 4;
 }
 ?>
+
 <p class="or"><?= __('or') ?></p>
 <h2 class="intrest_price">
     <p class="inst"><?= _('4 ') ?><strong><?= _('Intrest Free ') ?></strong><?= _('Payments of ') ?></p><?= $this->helper('Magento\Framework\Pricing\Helper\Data')->currency(number_format($price, 2), true, false); ?>
