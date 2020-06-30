@@ -1,11 +1,16 @@
 Hello index/index.phtml
 
 <?php
-echo "<pre>";
+// echo "<pre>";
 
 
-echo $block->getDatafun();
+// print_r($block->getDatafun());
 
+echo $this->getLayout()->createBlock("Excellence\WidgetColorPicker\Block\Widget\Textcolorpicker")->setName("from Phtml")->setTemplate("widget/textcolorpicker.phtml")->toHtml();
+
+ if($block->getData('name')): ?>
+	<h2 class='name'><?php echo $block->getData('name'); ?></h2>
+<?php endif; 
 
 // $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 // $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
@@ -13,8 +18,10 @@ echo $block->getDatafun();
 // $quote = $cart->getQuote();
 // $paymentMethod = $quote->getPayment()->getMethod();
 // echo $paymentMethod;
+// $helper = $this->helper('Excellence\GridRate\Helper\Data');
+// $values = $helper->getGridData();
 
-
+// print_r($values);
 
 
 // $objectManager = \Magento\Framework\App\ObjectManager::getInstance();

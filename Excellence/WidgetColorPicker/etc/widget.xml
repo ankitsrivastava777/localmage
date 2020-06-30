@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget class="Excellence\WidgetColorPicker\Block\Widget\Textcolorpicker" id="excellence_widgetcolorpicker_textcolorpicker">
+		<label>textcolorpicker</label>
+		<description>textcolorpicker</description>
+		<parameters>
+			<parameter name="name" sort_order="10" visible="true" xsi:type="text">
+				<label>name</label>
+			</parameter>
+			<parameter name="email" sort_order="10" visible="true" xsi:type="text">
+				<label>Email</label>
+			</parameter>
+			<parameter name="number" sort_order="10" visible="true" xsi:type="text">
+				<label>Mobile No.</label>
+			</parameter>
+			<parameter name="test_select" xsi:type="select" required="true" source_model="Excellence\WidgetColorPicker\Model\Config\Source\Select" visible="true" sort_order="8">
+				<label translate="true">Select option</label>
+				<description>Select type option</description>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>
