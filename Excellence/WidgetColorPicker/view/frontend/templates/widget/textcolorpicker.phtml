@@ -1,6 +1,17 @@
-<?php if ($block->getData('name')) : ?>
-	<h2 class='name'><?php echo $block->getData('name'); ?></h2>
-	<h2 class='email'><?php echo $block->getData('email'); ?></h2>
-	<h2 class='number'><?php echo $block->getData('number'); ?></h2>
-	<h2 class='test_select'><?php echo $block->getData('test_select'); ?></h2>
-<?php endif; ?>
+<?php
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+if ($product->getTypeId() == 'configurable') {
+    $basePrice = $product->getPriceInfo()->getPrice('regular_price');
+
+    $regularPrice = $basePrice->getMinRegularAmount()->getValue();
+    $price = $product->getFinalPrice() / 4;
+} else {
+    $price = $product->getPrice() / 4;
+}
+?>
+<p class="or"><?= __('or') ?></p>
+<h2 class="intrest_price">
+    <p class="inst"><?= _('4 ') ?><strong><?= _('Intrest Free ') ?></strong><?= _('Payments of ') ?></p><?= $this->helper('Magento\Framework\Pricing\Helper\Data')->currency(number_format($price, 2), true, false); ?>
+</h2>
