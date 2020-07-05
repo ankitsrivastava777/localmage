@@ -1,0 +1,19 @@
+<?php
+$helperData = $this->helper('Excellence\JqueryWidget\Helper\Data');
+$imageUrl = $this->helper('\Magento\Cms\Helper\Wysiwyg\Images')->getBaseUrl();
+?>
+<div id="owl-demo">
+    <div class="item"><img src="<?php echo $imageUrl . "yourfolder/" . $helperData->getBannerConfig(); ?>" alt="Owl Image"></div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#owl-demo": {
+            "OwlCarousel": {
+                "autoPlay": 3000,
+                "items": 1,
+                "itemsDesktop": [1199, 3],
+                "itemsDesktopSmall": [979, 3]
+            }
+        }
+    }
+</script>
